@@ -1,8 +1,8 @@
 <?php
 $idusuario=$_GET['idusuario'];
 include 'conexion.php';
+//validar si tiene iniciada session
 session_start();
-echo "hola ".$_SESSION['nombre'];
 if(!isset($_SESSION['nombre']))
 {
 header("Location: ../../index.php");
