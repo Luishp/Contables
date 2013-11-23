@@ -60,7 +60,7 @@ desconectar();
 ?>
                         </table>
                         <p><input type='hidden' name=idusuario value='".$idusuario."' /></p>
-                </form>";
+                </form>
                 <form action='paginap.php' method='get'>
                     <p><input type='hidden' name=aviso value='0' /></p>
                     <p><input type='hidden' name=idusuario value='".$idusuario."' /></p>
