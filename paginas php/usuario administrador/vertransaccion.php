@@ -4,6 +4,13 @@ $exito=$_GET['exito'];
 $idusuario=$_GET['idusuario'];
 include 'conexion.php';
 conectar();
+//validar si tiene iniciada session
+session_start();
+if(!isset($_SESSION['nombre']))
+{
+header("Location: ../../index.php");
+exit;
+}
 ?>
 
 <html>
