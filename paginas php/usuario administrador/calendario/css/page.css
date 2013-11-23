@@ -1,0 +1,16 @@
+
+
+
+
+
+.picker {
+	cursor: pointer;
+	width: 13px;
+	height: 12px;
+	display: inline-block;
+	background: url('../img/calendar.gif') no-repeat;
+	margin-left: -19px;
+	margin-top: 4px;
+	position: absolute;
+	display: inline;
+}

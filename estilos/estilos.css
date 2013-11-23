@@ -1,0 +1,207 @@
+
+
+#cabecera{
+	background: green;
+	text-align:right;
+	color: #FFFFFF;
+	width: 100%;
+	height: 33%;
+}
+
+#cuerpo{
+	background-color: #000000;
+	/*border: #FFFFFF 0.005px solid;*/
+	width: 100%;
+	height: auto;
+	min-height:600px;
+	margin: 0 auto;
+	color: blue;
+}
+
+#pie{	
+	background: #000000;
+	text-align:center;
+	font-size: 12px;
+	width: 100%;
+	color: #FFFFFF;
+	height: auto;
+}
+
+#capaSuperior{
+    position: fixed;
+   left: 11%;
+    top: 9%;
+}
+#fondo
+{
+	background: red;
+}   
+body { 
+	padding: 0; 
+	margin: 0; 
+	font: 0.7em Arial, sans-serif; 
+	line-height: 1.5em;
+	background: #fff; 
+	color: #454545; 
+    background-image: url("../fondos/grafica.png"); 
+	background-color: transparent;
+}
+
+/*font-size: x-large;*/ 
+form { 
+	margin: 0; 
+}
+input.search { 
+	width: 199px; 
+	border: none;
+	background: url(input.gif); 
+	padding: 4px; 
+}
+.content { 
+	margin: 10px auto;
+	width: 760px; 
+}
+
+
+p {	
+	margin: 0 0 5px 0;
+	
+}
+
+
+
+#tablae1
+{
+
+  border-style:1px solid #CCCCCC;
+  background-color:aliceblue;
+  border-spacing:5;
+}
+
+ 
+
+td {
+  border-style:groove;
+  background-color:green;
+  padding:4px;
+  color:white;
+ }
+#tde{
+  border-style:groove;
+  background-color:blue;
+  padding:4px;
+  color:white;
+ }
+	
+	
+input.login { 
+	width: 150px;
+	border: double; 
+	background: url(logininput.gif); 
+	padding: 4px; 
+}
+
+
+	.right_login {
+		border: double; 
+		width: 30%;
+		padding: 10px;
+		margin: 0 0 10px 0;
+		background: url("../fondos/session.png");
+		background-color: transparent;
+		color: #246088;
+		font: 2em Impacto, fantasía; 
+		font-weight:bold;
+	}
+	
+	#caja1
+	{
+		width: 20%;
+		border: double; 
+		padding: 5px; 
+		padding: 10px;
+		margin: 0 0 10px 0;
+		background: url("../fondos/caja2.png");
+		background-color: transparent;
+		color: red;
+		font: 2em Impacto, fantasía; 
+		font-weight:bold;
+	}	
+
+#boton1 
+{
+	background:url('../fondos/calculadoram.png') no-repeat; 
+	width:80px; 
+	color: #000099;
+	font: 1em Impacto, fantasía; 
+	font-weight:bold;
+	height:30px;
+	border: double; 
+	cursor: pointer;
+}
+	
+	#caja2
+	{
+		width: 65%;
+		border: double; 
+		padding: 5px; 
+		padding: 10px;
+		margin: 0 0 10px 0;
+		background: url("../fondos/session.png");
+		background-color: transparent;
+		color: red;
+		font: 2em Impacto, fantasía; 
+		font-weight:bold;
+	}
+	
+	#caja3
+	{
+		width: 30%;
+		border: double; 
+		padding: 5px; 
+		padding: 10px;
+		margin: 0 0 10px 0;
+		background: url("../fondos/session.png");
+		background-color: transparent;
+		color: red;
+		font: 2em Impacto, fantasía; 
+		font-weight:bold;
+	}
+	
+		
+	#caja4
+	{
+		width: 40%;
+		border: double; 
+		padding: 5px; 
+		padding: 10px;
+		margin: 0 0 10px 0;
+		background: url("../fondos/session.png");
+		background-color: transparent;
+		color: red;
+		font: 2em Impacto, fantasía; 
+		font-weight:bold;
+	}
+	
+	#caja5
+	{
+		margin: 0 0 0 0;
+		background-color: transparent;
+		color: red;
+		font: 2em Impacto, fantasía; 
+	}
+	
+	#td2 
+	{
+			background-color: transparent;
+			padding:0;
+			border: hidden;
+	}
+	
+	
+	#tabla3 
+	{
+			background-color: transparent;
+			padding:0;
+			border: hidden;
+	}
