@@ -1,15 +1,22 @@
 <?php
 $idusuario=$_GET['idusuario'];
 include 'conexion.php';
+session_start();
+echo "hola ".$_SESSION['nombre'];
+if(!isset($_SESSION['nombre']))
+{
+header("Location: ../../index.php");
+exit;
+}
+
 conectar();
 $result=mysql_query("select * from usuario where idusuario='".$idusuario."'");
 
 $fila=mysql_fetch_array($result);
-if($fila['idUsuario']==$idusuario)
-{
-	echo "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//ES' 
-	'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+?>
+
+<!DOCTYPE html>
+<html lang='es'>
 
 <head>
 	<title>BIENVENIDO A NUESTRA PAGINA</title>
@@ -54,7 +61,8 @@ if($fila['idUsuario']==$idusuario)
 		<p><input type='hidden' name=error value='0' /></p>
 		<p><input type='hidden' name=exito value='0' /></p>
 	</form>
-	</div></center>";
+	</div></center>
+<?php
 	$aviso=$_GET['aviso'];
 	if($aviso==1)
 	{
@@ -80,17 +88,6 @@ if($fila['idUsuario']==$idusuario)
 	{
 		echo "</br></br><center><p id='caja1'>Aviso 3: Eliminacion exitosa de transacción </p></center>";
 	}
-	
-	echo "</body>
-		</html>";
-	desconectar();
-}
-else
-{
-				/* Redirigir navegador */
-				desconectar();
-				header("Location:../../index.php");
-				/* Asegúrese de que el código que aparece a continuación no se ejecutará cuando redireccionamos.*/
-				exit;
-}
 ?>
+</body>
+</html>

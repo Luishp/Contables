@@ -30,7 +30,7 @@ if($lfail==1)
 {
 	echo "</br></br><center><p id='caja1'>Error el usuario o contraseña fue mal Escrito</p></center>";
 }
-?>			
+?>
 
 </body>
 </html>
