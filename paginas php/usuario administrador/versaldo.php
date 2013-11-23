@@ -3,42 +3,49 @@ $error=$_GET['error'];
 $idusuario=$_GET['idusuario'];
 include 'conexion.php';
 conectar();
-echo "<html>
-		<head><title></title>
+//validar si tiene iniciada session
+session_start();
+if(!isset($_SESSION['nombre']))
+{
+header("Location: ../../index.php");
+exit;
+}
+?>
 
-
-		 <style type='text/css'>
-			@import '../css/main.css';
-			@import '../../estilos/estilos.css';
-		</style>
+<html>
+    <head>
+        <title></title>
+        <style type='text/css'>
+            @import '../css/main.css';
+            @import '../../estilos/estilos.css';
+        </style>
 </head>
-		<body>
-		<center><div id='caja2'>
-			<form action='editu.php' method='get'>
-			
-			<br />
+    <body>
+        <center>
+            <div id='caja2'>
+                <form action='editu.php' method='get'>
+                    	<br />
 			<br />
 			<br />
 			<br />
 			<table id='tablae1'>
-			<thead>
-			<tr>
-			<td id='tde'>Codigo de Cuenta</td>
-			<td id='tde'>Nombre de cuenta</td>
-			<td id='tde'>Tipo de cuenta</td>
-			<td id='tde'>Debe</td>
-			<td id='tde'>Haber</td>
-			</tr>
-			</thead>";
- 
-
+                            <thead>
+                                <tr>
+                                    <td id='tde'>Codigo de Cuenta</td>
+                                    <td id='tde'>Nombre de cuenta</td>
+                                    <td id='tde'>Tipo de cuenta</td>
+                                    <td id='tde'>Debe</td>
+                                    <td id='tde'>Haber</td>
+                                </tr>
+                            </thead>
+<?php
 $result=mysql_query("SELECT 
 c.idCuenta as idCuenta,c.nombreC as nombreC,tc.nombreTC as nombreTC,sum(debe) as debe,sum(haber) as haber 
 FROM cuenta as c,detalle_c as dc,tipocuenta as tc
 WHERE dc.id_cuenta_fk=c.idCuenta and c.idTC=tc.idTC
 GROUP BY c.idCuenta");
 $cont=0;
-while($fila=mysql_fetch_array($result)) 
+while($fila=mysql_fetch_array($result))
 {
 	echo "<tr>";
 	echo "<td>".$fila['idCuenta']."</td>";
@@ -50,14 +57,21 @@ while($fila=mysql_fetch_array($result))
 	$cont++;
 }
 desconectar();
+?>
+                        </table>
+                        <p><input type='hidden' name=idusuario value='".$idusuario."' /></p>
+                </form>";
+                <form action='paginap.php' method='get'>
+                    <p><input type='hidden' name=aviso value='0' /></p>
+                    <p><input type='hidden' name=idusuario value='".$idusuario."' /></p>
+                    <p><input type='submit' value='Regresar' /></p>
+                </form>
+            </div>
+        </center>
+    </body>
+</html>
 
-echo "</table>
-		<p><input type='hidden' name=idusuario value='".$idusuario."' /></p></form>";
-	echo "<form action='paginap.php' method='get'>
-		<p><input type='hidden' name=aviso value='0' /></p>
-		<p><input type='hidden' name=idusuario value='".$idusuario."' /></p>
-		<p><input type='submit' value='Regresar' /></p>
-	</form></div></center></body></html>";
+<?php
 	if($error==1)
 	{
 		echo "Error edicion de usuario 1:No selecciono ninguno a editar";
